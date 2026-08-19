@@ -8,6 +8,11 @@
     <title>Struktur Organisasi XI TKJ 1</title>
 
     <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -15,513 +20,1032 @@
             scroll-behavior: smooth;
         }
 
+
+        /* =========================
+           BODY / BACKGROUND
+        ========================== */
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: white;
+
             background:
-                linear-gradient(rgba(3, 15, 35, 0.88), rgba(0, 40, 70, 0.92)),
-                url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+                linear-gradient(
+                    135deg,
+                    #022c22,
+                    #065f46,
+                    #059669,
+                    #16a34a,
+                    #052e16
+                );
+
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+
+            min-height: 100vh;
         }
 
-        /* NAVBAR */
+
+        @keyframes gradientBackground {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
         nav {
+
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(3, 15, 35, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-            padding: 15px 7%;
+
+            z-index: 999;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(2, 44, 34, 0.75);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.15);
         }
+
 
         .logo {
-            font-size: 22px;
+
+            font-size: 23px;
+
             font-weight: bold;
-            color: #00eaff;
+
+            color: #86efac;
+
+            letter-spacing: 1px;
         }
 
+
         nav ul {
+
             display: flex;
+
             list-style: none;
+
             gap: 25px;
         }
 
-        nav a {
+
+        nav ul li a {
+
             color: white;
+
             text-decoration: none;
+
             font-size: 14px;
+
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #00eaff;
+
+        nav ul li a:hover {
+
+            color: #86efac;
+
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
+
             min-height: 90vh;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             padding: 40px 20px;
         }
 
+
         .hero-content {
+
             max-width: 850px;
+
         }
+
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            border-radius: 50px;
+
+            background: rgba(134,239,172,0.12);
+
+            border:
+                1px solid
+                rgba(134,239,172,0.4);
+
+            color: #bbf7d0;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+        }
+
 
         .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            color: #00eaff;
-            text-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
-            margin-bottom: 15px;
-        }
 
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
+            font-size:
+                clamp(55px, 10vw, 110px);
 
-        .hero p {
-            color: #c7d7e8;
-            font-size: 17px;
-            line-height: 1.7;
-        }
+            color: #bbf7d0;
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            border-radius: 30px;
-            background: #00d9ff;
-            color: #00101d;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+            text-shadow:
+                0 0 35px
+                rgba(134,239,172,0.4);
 
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 25px rgba(0, 234, 255, 0.6);
-        }
-
-        /* SECTION */
-        section {
-            padding: 90px 7%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            color: #00eaff;
             margin-bottom: 10px;
         }
 
-        .section-title p {
-            color: #b7c7d8;
+
+        .hero h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
         }
 
-        /* ORGANISASI */
-        .organization {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
+
+        .hero p {
+
+            color: #d1fae5;
+
+            line-height: 1.8;
+
+            font-size: 17px;
         }
+
+
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            background: #86efac;
+
+            color: #052e16;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(134,239,172,0.3);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+
+            padding:
+                90px 7%;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 38px;
+
+            color: #bbf7d0;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+
+            color: #d1fae5;
+        }
+
+
+        /* =========================
+           ORGANISASI
+        ========================== */
+
+        .organization {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
 
         .leader {
-            grid-column: 1 / -1;
+
+            grid-column:
+                1 / -1;
+
             display: flex;
+
             justify-content: center;
         }
 
+
+        /* =========================
+           CARD
+        ========================== */
+
         .card {
-            background: rgba(8, 30, 55, 0.75);
-            border: 1px solid rgba(0, 234, 255, 0.2);
-            border-radius: 20px;
-            padding: 25px;
+
+            background:
+                rgba(2, 44, 34, 0.55);
+
+            border:
+                1px solid
+                rgba(187,247,208,0.2);
+
+            border-radius: 25px;
+
+            padding: 30px 25px;
+
             text-align: center;
-            backdrop-filter: blur(12px);
-            transition: 0.4s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+            backdrop-filter:
+                blur(15px);
+
+            transition:
+                0.4s;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.15);
         }
+
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: #00eaff;
-            box-shadow: 0 0 30px rgba(0,234,255,0.18);
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                #86efac;
+
+            box-shadow:
+                0 15px 45px
+                rgba(134,239,172,0.15);
         }
+
 
         .card img {
-            width: 130px;
-            height: 130px;
+
+            width: 140px;
+
+            height: 140px;
+
             object-fit: cover;
+
             border-radius: 50%;
-            border: 4px solid #00eaff;
-            margin-bottom: 18px;
+
+            border:
+                4px solid
+                #86efac;
+
+            margin-bottom: 20px;
+
+            background:
+                rgba(255,255,255,0.1);
         }
+
 
         .card h3 {
-            color: white;
-            margin-bottom: 7px;
+
             font-size: 21px;
-        }
 
-        .position {
-            color: #00eaff;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .profile {
-            color: #b7c7d8;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* JADWAL PIKET */
-        .schedule-container {
-            max-width: 1000px;
-            margin: auto;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(8, 30, 55, 0.75);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 18px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        th {
-            background: #00bcd4;
-            color: #00101d;
-        }
-
-        tr:hover {
-            background: rgba(0,234,255,0.08);
-        }
-
-        /* KEGIATAN */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 18px;
-            height: 240px;
-            background: rgba(8,30,55,0.8);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            font-weight: bold;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-            background: rgba(2, 12, 25, 0.9);
-            border-top: 1px solid rgba(0,234,255,0.2);
-        }
-
-        footer h3 {
-            color: #00eaff;
             margin-bottom: 8px;
         }
 
-        footer p {
-            color: #8fa6bb;
-            font-size: 14px;
+
+        .position {
+
+            color: #86efac;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
         }
 
-        /* RESPONSIVE */
+
+        .profile {
+
+            color: #d1fae5;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           JADWAL PIKET
+        ========================== */
+
+        .schedule {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            overflow-x: auto;
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse:
+                collapse;
+
+            background:
+                rgba(2,44,34,0.55);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        th {
+
+            padding: 20px;
+
+            background:
+                rgba(134,239,172,0.8);
+
+            color:
+                #052e16;
+        }
+
+
+        td {
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            color: #ecfdf5;
+        }
+
+
+        tr:hover {
+
+            background:
+                rgba(134,239,172,0.08);
+        }
+
+
+        /* =========================
+           GALERI
+        ========================== */
+
+        .gallery {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        .gallery-item {
+
+            height: 250px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            background:
+                rgba(2,44,34,0.7);
+
+            border:
+                1px solid
+                rgba(134,239,172,0.2);
+        }
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                0.5s;
+        }
+
+
+        .gallery-item:hover img {
+
+            transform:
+                scale(1.1);
+        }
+
+
+        .gallery-caption {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.9)
+                );
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background:
+                rgba(2,20,15,0.8);
+
+            border-top:
+                1px solid
+                rgba(134,239,172,0.2);
+        }
+
+
+        footer h3 {
+
+            color: #86efac;
+
+            margin-bottom: 10px;
+        }
+
+
+        footer p {
+
+            color: #bbf7d0;
+
+            font-size: 14px;
+
+            margin: 5px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
         @media (max-width: 700px) {
 
             nav {
+
                 flex-direction: column;
-                gap: 12px;
+
+                gap: 15px;
             }
+
 
             nav ul {
-                gap: 12px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
+
+                gap: 15px;
             }
 
+
             .hero h2 {
+
                 font-size: 24px;
             }
 
+
             section {
-                padding: 65px 5%;
+
+                padding:
+                    70px 5%;
             }
 
+
             .leader {
+
                 display: block;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <nav>
-    <div class="logo">XI TKJ 1</div>
+
+    <div class="logo">
+        XI TKJ 1
+    </div>
+
 
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#organisasi">Organisasi</a></li>
-        <li><a href="#piket">Jadwal Piket</a></li>
-        <li><a href="#kegiatan">Kegiatan</a></li>
+
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#organisasi">
+                Organisasi
+            </a>
+        </li>
+
+        <li>
+            <a href="#piket">
+                Jadwal Piket
+            </a>
+        </li>
+
+        <li>
+            <a href="#kegiatan">
+                Kegiatan
+            </a>
+        </li>
+
     </ul>
+
 </nav>
 
 
-<!-- ================= HOME ================= -->
 
-<section class="hero" id="home">
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
 
-        <h1>XI TKJ 1</h1>
 
-        <h2>Struktur Organisasi Kelas</h2>
+        <div class="badge">
+
+            WEBSITE RESMI KELAS
+
+        </div>
+
+
+        <h1>
+            XI TKJ 1
+        </h1>
+
+
+        <h2>
+            Struktur Organisasi Kelas
+        </h2>
+
 
         <p>
-            Selamat datang di website resmi kelas XI TKJ 1.
-            Website ini berisi struktur organisasi kelas,
-            profil pengurus, jadwal piket, serta dokumentasi
-            kegiatan kelas.
+
+            Selamat datang di website
+            kelas XI TKJ 1.
+
+            <br>
+
+            Di sini kamu dapat melihat
+            struktur organisasi,
+            profil pengurus kelas,
+            jadwal piket, dan
+            dokumentasi kegiatan kelas.
+
         </p>
 
-        <a href="#organisasi" class="btn">
-            Lihat Struktur Organisasi
+
+        <a
+            href="#organisasi"
+            class="btn"
+        >
+
+            Lihat Organisasi
+
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= ORGANISASI ================= -->
 
-<section id="organisasi">
+<!-- =====================================================
+     STRUKTUR ORGANISASI
+===================================================== -->
+
+<section
+    id="organisasi"
+>
+
 
     <div class="section-title">
 
-        <h2>Struktur Organisasi</h2>
+        <h2>
+            Struktur Organisasi
+        </h2>
 
         <p>
-            Susunan pengurus kelas XI TKJ 1
+            Pengurus kelas XI TKJ 1
         </p>
 
     </div>
+
 
 
     <div class="organization">
 
 
-        <!-- WALI KELAS -->
+        <!-- =====================
+             WALI KELAS
+        ====================== -->
 
         <div class="leader">
 
             <div class="card">
 
-                <!-- GANTI LINK FOTO WALI KELAS DI SINI -->
-                <img src="#" alt="Foto Wali Kelas">
+
+                <!--
+                    GANTI # DENGAN
+                    NAMA FILE FOTO WALI KELAS
+                -->
+
+                <img
+                    src="#"
+                    alt="Foto Wali Kelas"
+                >
+
 
                 <h3>
+
                     # ISI NAMA WALI KELAS
+
                 </h3>
 
+
                 <div class="position">
+
                     WALI KELAS
+
                 </div>
 
+
                 <p class="profile">
+
                     # ISI PROFIL WALI KELAS DI SINI
+
                     <br><br>
-                    # Contoh: Guru mata pelajaran ...
+
+                    # Tulis informasi
+                    mengenai wali kelas.
+
                 </p>
 
+
             </div>
 
         </div>
 
 
-        <!-- KETUA -->
+
+        <!-- =====================
+             KETUA
+        ====================== -->
 
         <div class="card">
 
-            <!-- GANTI FOTO KETUA DI SINI -->
-            <img src="#" alt="Foto Ketua">
+
+            <img
+                src="#"
+                alt="Foto Ketua Kelas"
+            >
+
 
             <h3>
+
                 # ISI NAMA KETUA
+
             </h3>
 
+
             <div class="position">
+
                 KETUA KELAS
+
             </div>
 
+
             <p class="profile">
+
                 # ISI PROFIL KETUA DI SINI
+
                 <br><br>
-                # Contoh: Bertanggung jawab
-                terhadap kegiatan kelas.
+
+                # Tulis informasi
+                mengenai ketua kelas.
+
             </p>
+
 
         </div>
 
 
-        <!-- WAKIL -->
+
+        <!-- =====================
+             WAKIL
+        ====================== -->
 
         <div class="card">
 
-            <!-- GANTI FOTO WAKIL DI SINI -->
-            <img src="#" alt="Foto Wakil">
+
+            <img
+                src="#"
+                alt="Foto Wakil Ketua"
+            >
+
 
             <h3>
+
                 # ISI NAMA WAKIL
+
             </h3>
 
+
             <div class="position">
+
                 WAKIL KETUA
+
             </div>
 
+
             <p class="profile">
+
                 # ISI PROFIL WAKIL DI SINI
+
                 <br><br>
-                # Contoh: Membantu ketua
-                dalam menjalankan tugas.
+
+                # Tulis informasi
+                mengenai wakil ketua.
+
             </p>
+
 
         </div>
 
 
-        <!-- SEKRETARIS -->
+
+        <!-- =====================
+             SEKRETARIS
+        ====================== -->
 
         <div class="card">
 
-            <!-- GANTI FOTO SEKRETARIS DI SINI -->
-            <img src="#" alt="Foto Sekretaris">
+
+            <img
+                src="#"
+                alt="Foto Sekretaris"
+            >
+
 
             <h3>
+
                 # ISI NAMA SEKRETARIS
+
             </h3>
 
+
             <div class="position">
+
                 SEKRETARIS
+
             </div>
 
+
             <p class="profile">
+
                 # ISI PROFIL SEKRETARIS DI SINI
+
                 <br><br>
-                # Contoh: Mengelola administrasi
-                dan catatan kelas.
+
+                # Tulis informasi
+                mengenai sekretaris.
+
             </p>
+
 
         </div>
 
 
-        <!-- BENDAHARA -->
+
+        <!-- =====================
+             BENDAHARA
+        ====================== -->
 
         <div class="card">
 
-            <!-- GANTI FOTO BENDAHARA DI SINI -->
-            <img src="#" alt="Foto Bendahara">
+
+            <img
+                src="#"
+                alt="Foto Bendahara"
+            >
+
 
             <h3>
+
                 # ISI NAMA BENDAHARA
+
             </h3>
 
+
             <div class="position">
+
                 BENDAHARA
+
             </div>
 
+
             <p class="profile">
+
                 # ISI PROFIL BENDAHARA DI SINI
+
                 <br><br>
-                # Contoh: Mengelola keuangan
-                kelas.
+
+                # Tulis informasi
+                mengenai bendahara.
+
             </p>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= JADWAL PIKET ================= -->
 
-<section id="piket">
+<!-- =====================================================
+     JADWAL PIKET
+===================================================== -->
+
+<section
+    id="piket"
+>
+
 
     <div class="section-title">
 
-        <h2>Jadwal Piket</h2>
+        <h2>
+            Jadwal Piket
+        </h2>
 
         <p>
-            Jadwal piket kebersihan kelas XI TKJ 1
+            Jadwal kebersihan kelas
+            XI TKJ 1
         </p>
 
     </div>
 
 
-    <div class="schedule-container">
+
+    <div class="schedule">
+
 
         <table>
+
 
             <thead>
 
                 <tr>
-                    <th>Hari</th>
-                    <th>Anggota Piket</th>
+
+                    <th>
+                        HARI
+                    </th>
+
+                    <th>
+                        ANGGOTA PIKET
+                    </th>
+
                 </tr>
 
             </thead>
@@ -529,20 +1053,33 @@
 
             <tbody>
 
+
                 <!-- SENIN -->
 
                 <tr>
 
-                    <td><strong>Senin</strong></td>
+                    <td>
+                        <strong>
+                            SENIN
+                        </strong>
+                    </td>
 
                     <td>
+
                         # NAMA ANGGOTA 1
                         <br>
+
                         # NAMA ANGGOTA 2
                         <br>
+
                         # NAMA ANGGOTA 3
                         <br>
+
                         # NAMA ANGGOTA 4
+                        <br>
+
+                        # NAMA ANGGOTA 5
+
                     </td>
 
                 </tr>
@@ -552,16 +1089,28 @@
 
                 <tr>
 
-                    <td><strong>Selasa</strong></td>
+                    <td>
+                        <strong>
+                            SELASA
+                        </strong>
+                    </td>
 
                     <td>
+
                         # NAMA ANGGOTA 1
                         <br>
+
                         # NAMA ANGGOTA 2
                         <br>
+
                         # NAMA ANGGOTA 3
                         <br>
+
                         # NAMA ANGGOTA 4
+                        <br>
+
+                        # NAMA ANGGOTA 5
+
                     </td>
 
                 </tr>
@@ -571,16 +1120,28 @@
 
                 <tr>
 
-                    <td><strong>Rabu</strong></td>
+                    <td>
+                        <strong>
+                            RABU
+                        </strong>
+                    </td>
 
                     <td>
+
                         # NAMA ANGGOTA 1
                         <br>
+
                         # NAMA ANGGOTA 2
                         <br>
+
                         # NAMA ANGGOTA 3
                         <br>
+
                         # NAMA ANGGOTA 4
+                        <br>
+
+                        # NAMA ANGGOTA 5
+
                     </td>
 
                 </tr>
@@ -590,16 +1151,28 @@
 
                 <tr>
 
-                    <td><strong>Kamis</strong></td>
+                    <td>
+                        <strong>
+                            KAMIS
+                        </strong>
+                    </td>
 
                     <td>
+
                         # NAMA ANGGOTA 1
                         <br>
+
                         # NAMA ANGGOTA 2
                         <br>
+
                         # NAMA ANGGOTA 3
                         <br>
+
                         # NAMA ANGGOTA 4
+                        <br>
+
+                        # NAMA ANGGOTA 5
+
                     </td>
 
                 </tr>
@@ -609,19 +1182,32 @@
 
                 <tr>
 
-                    <td><strong>Jumat</strong></td>
+                    <td>
+                        <strong>
+                            JUMAT
+                        </strong>
+                    </td>
 
                     <td>
+
                         # NAMA ANGGOTA 1
                         <br>
+
                         # NAMA ANGGOTA 2
                         <br>
+
                         # NAMA ANGGOTA 3
                         <br>
+
                         # NAMA ANGGOTA 4
+                        <br>
+
+                        # NAMA ANGGOTA 5
+
                     </td>
 
                 </tr>
+
 
             </tbody>
 
@@ -632,124 +1218,169 @@
 </section>
 
 
-<!-- ================= KEGIATAN ================= -->
 
-<section id="kegiatan">
+<!-- =====================================================
+     FOTO KEGIATAN
+===================================================== -->
+
+<section
+    id="kegiatan"
+>
+
 
     <div class="section-title">
 
-        <h2>Dokumentasi Kegiatan</h2>
+        <h2>
+            Foto Kegiatan
+        </h2>
 
         <p>
-            Foto-foto kegiatan kelas XI TKJ 1
+            Dokumentasi kegiatan
+            kelas XI TKJ 1
         </p>
 
     </div>
 
 
+
     <div class="gallery">
 
 
-        <!-- FOTO 1 -->
+        <!-- FOTO KEGIATAN 1 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 1 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 1"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 1
+
             </div>
 
         </div>
 
 
-        <!-- FOTO 2 -->
+
+        <!-- FOTO KEGIATAN 2 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 2 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 2"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 2
+
             </div>
 
         </div>
 
 
-        <!-- FOTO 3 -->
+
+        <!-- FOTO KEGIATAN 3 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 3 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 3"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 3
+
             </div>
 
         </div>
 
 
-        <!-- FOTO 4 -->
+
+        <!-- FOTO KEGIATAN 4 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 4 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 4"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 4
+
             </div>
 
         </div>
 
 
-        <!-- FOTO 5 -->
+
+        <!-- FOTO KEGIATAN 5 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 5 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 5"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 5
+
             </div>
 
         </div>
 
 
-        <!-- FOTO 6 -->
+
+        <!-- FOTO KEGIATAN 6 -->
 
         <div class="gallery-item">
 
-            <!-- GANTI DENGAN FOTO KEGIATAN 6 -->
-            <img src="#" alt="Kegiatan Kelas">
+            <img
+                src="#"
+                alt="Foto Kegiatan 6"
+            >
 
             <div class="gallery-caption">
+
                 # JUDUL KEGIATAN 6
+
             </div>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <h3>XI TKJ 1</h3>
+    <h3>
+        XI TKJ 1
+    </h3>
 
     <p>
         Struktur Organisasi Kelas
     </p>
 
     <p>
-        © 2026 XI TKJ 1. All Rights Reserved.
+        © 2026 XI TKJ 1
     </p>
 
 </footer>
