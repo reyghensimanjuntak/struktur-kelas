@@ -1,18 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Struktur Organisasi XI TKJ 1</title>
+    <title>Struktur Kelas XI TKJ 1</title>
 
     <style>
-
-        /* =========================
-           RESET
-        ========================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -20,59 +14,39 @@
             scroll-behavior: smooth;
         }
 
-
-        /* =========================
-           BODY / BACKGROUND
-        ========================== */
-
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: white;
 
+            /* ==============================
+               BACKGROUND WEBSITE
+               Kamu bisa mengganti background
+               di bagian ini.
+            ============================== */
+
             background:
                 linear-gradient(
-                    135deg,
-                    #022c22,
-                    #065f46,
-                    #059669,
-                    #16a34a,
-                    #052e16
-                );
+                    rgba(15, 23, 42, 0.82),
+                    rgba(30, 27, 75, 0.90)
+                ),
+                url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80");
 
-            background-size: 400% 400%;
-            animation: gradientBackground 15s ease infinite;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
 
             min-height: 100vh;
         }
 
-
-        @keyframes gradientBackground {
-
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-
-        }
-
-
         /* =========================
            NAVBAR
-        ========================== */
+        ========================= */
 
         nav {
-
-            position: sticky;
+            position: fixed;
             top: 0;
-
-            z-index: 999;
+            width: 100%;
+            z-index: 1000;
 
             display: flex;
             justify-content: space-between;
@@ -80,570 +54,441 @@
 
             padding: 18px 7%;
 
-            background: rgba(2, 44, 34, 0.75);
-
+            background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(15px);
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
 
         .logo {
-
-            font-size: 23px;
-
+            font-size: 22px;
             font-weight: bold;
-
-            color: #86efac;
-
-            letter-spacing: 1px;
         }
 
+        .logo span {
+            color: #8b5cf6;
+        }
 
         nav ul {
-
             display: flex;
-
             list-style: none;
-
             gap: 25px;
         }
 
-
         nav ul li a {
-
             color: white;
-
             text-decoration: none;
-
             font-size: 14px;
-
             transition: 0.3s;
         }
 
-
         nav ul li a:hover {
-
-            color: #86efac;
-
+            color: #a78bfa;
         }
-
 
         /* =========================
            HERO
-        ========================== */
+        ========================= */
 
         .hero {
-
-            min-height: 90vh;
+            min-height: 100vh;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 100px 20px 50px;
         }
-
 
         .hero-content {
-
-            max-width: 850px;
-
+            max-width: 900px;
         }
-
-
-        .badge {
-
-            display: inline-block;
-
-            padding: 10px 20px;
-
-            border-radius: 50px;
-
-            background: rgba(134,239,172,0.12);
-
-            border:
-                1px solid
-                rgba(134,239,172,0.4);
-
-            color: #bbf7d0;
-
-            margin-bottom: 25px;
-
-            font-size: 14px;
-        }
-
 
         .hero h1 {
+            font-size: 70px;
+            margin-bottom: 15px;
 
-            font-size:
-                clamp(55px, 10vw, 110px);
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #a78bfa,
+                #38bdf8
+            );
 
-            color: #bbf7d0;
-
-            text-shadow:
-                0 0 35px
-                rgba(134,239,172,0.4);
-
-            margin-bottom: 10px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-
         .hero h2 {
-
             font-size: 30px;
-
             margin-bottom: 20px;
         }
 
-
         .hero p {
-
-            color: #d1fae5;
-
-            line-height: 1.8;
-
+            color: #cbd5e1;
             font-size: 17px;
+            line-height: 1.7;
         }
 
-
         .btn {
-
             display: inline-block;
 
             margin-top: 30px;
 
-            padding: 15px 30px;
+            padding: 13px 25px;
 
-            border-radius: 50px;
-
-            background: #86efac;
-
-            color: #052e16;
+            border-radius: 30px;
 
             text-decoration: none;
+            color: white;
 
-            font-weight: bold;
+            background: linear-gradient(
+                135deg,
+                #7c3aed,
+                #2563eb
+            );
 
             transition: 0.3s;
-        }
 
+            box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+        }
 
         .btn:hover {
-
-            transform:
-                translateY(-5px);
-
-            box-shadow:
-                0 10px 30px
-                rgba(134,239,172,0.3);
+            transform: translateY(-5px);
         }
-
 
         /* =========================
            SECTION
-        ========================== */
+        ========================= */
 
         section {
-
-            padding:
-                90px 7%;
+            padding: 90px 7%;
         }
-
 
         .section-title {
-
             text-align: center;
-
-            margin-bottom: 55px;
+            margin-bottom: 50px;
         }
 
-
         .section-title h2 {
-
             font-size: 38px;
-
-            color: #bbf7d0;
-
             margin-bottom: 10px;
         }
 
-
         .section-title p {
-
-            color: #d1fae5;
+            color: #94a3b8;
         }
 
+        /* =========================
+           GLASS CARD
+        ========================= */
+
+        .card {
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(167,139,250,0.5);
+        }
+
+        /* =========================
+           WALI KELAS
+        ========================= */
+
+        .wali-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid #8b5cf6;
+
+            margin-bottom: 20px;
+
+            background: rgba(255,255,255,0.1);
+        }
+
+        .profile-card h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .jabatan {
+            color: #a78bfa;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .profile-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
 
         /* =========================
            ORGANISASI
-        ========================== */
+        ========================= */
 
         .organization {
-
-            max-width: 1100px;
-
-            margin: auto;
-
             display: grid;
 
             grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(230px, 1fr)
-                );
+                repeat(auto-fit, minmax(220px, 1fr));
 
             gap: 25px;
         }
 
-
-        .leader {
-
-            grid-column:
-                1 / -1;
-
-            display: flex;
-
-            justify-content: center;
-        }
-
-
-        /* =========================
-           CARD
-        ========================== */
-
-        .card {
-
-            background:
-                rgba(2, 44, 34, 0.55);
-
-            border:
-                1px solid
-                rgba(187,247,208,0.2);
-
-            border-radius: 25px;
-
-            padding: 30px 25px;
-
+        .organization .card {
             text-align: center;
-
-            backdrop-filter:
-                blur(15px);
-
-            transition:
-                0.4s;
-
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.15);
         }
 
-
-        .card:hover {
-
-            transform:
-                translateY(-10px);
-
-            border-color:
-                #86efac;
-
-            box-shadow:
-                0 15px 45px
-                rgba(134,239,172,0.15);
-        }
-
-
-        .card img {
-
-            width: 140px;
-
-            height: 140px;
-
-            object-fit: cover;
+        .organization img {
+            width: 120px;
+            height: 120px;
 
             border-radius: 50%;
 
-            border:
-                4px solid
-                #86efac;
+            object-fit: cover;
 
-            margin-bottom: 20px;
+            border: 3px solid #6366f1;
 
-            background:
-                rgba(255,255,255,0.1);
+            margin-bottom: 15px;
         }
 
-
-        .card h3 {
-
-            font-size: 21px;
-
-            margin-bottom: 8px;
+        .organization h3 {
+            margin-bottom: 7px;
         }
 
-
-        .position {
-
-            color: #86efac;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
-        }
-
-
-        .profile {
-
-            color: #d1fae5;
-
+        .organization .position {
+            color: #a78bfa;
             font-size: 14px;
-
-            line-height: 1.7;
+            font-weight: bold;
+            margin-bottom: 12px;
         }
 
+        .organization p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
         /* =========================
            JADWAL PIKET
-        ========================== */
+        ========================= */
 
         .schedule {
-
-            max-width: 1000px;
-
-            margin: auto;
-
-            overflow-x: auto;
-        }
-
-
-        table {
-
-            width: 100%;
-
-            border-collapse:
-                collapse;
-
-            background:
-                rgba(2,44,34,0.55);
-
-            backdrop-filter:
-                blur(15px);
-
-            border-radius: 20px;
-
-            overflow: hidden;
-        }
-
-
-        th {
-
-            padding: 20px;
-
-            background:
-                rgba(134,239,172,0.8);
-
-            color:
-                #052e16;
-        }
-
-
-        td {
-
-            padding: 20px;
-
-            text-align: center;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.1);
-
-            color: #ecfdf5;
-        }
-
-
-        tr:hover {
-
-            background:
-                rgba(134,239,172,0.08);
-        }
-
-
-        /* =========================
-           GALERI
-        ========================== */
-
-        .gallery {
-
-            max-width: 1100px;
-
-            margin: auto;
-
             display: grid;
 
             grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(250px, 1fr)
-                );
+                repeat(auto-fit, minmax(220px, 1fr));
 
             gap: 20px;
         }
 
+        .day-card {
+            padding: 25px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            transition: 0.3s;
+        }
+
+        .day-card:hover {
+            transform: scale(1.04);
+        }
+
+        .day-card h3 {
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            color: #a78bfa;
+
+            font-size: 23px;
+        }
+
+        .day-card ul {
+            list-style: none;
+        }
+
+        .day-card li {
+            padding: 10px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            color: #e2e8f0;
+        }
+
+        .day-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* =========================
+           GALERI
+        ========================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
 
         .gallery-item {
+            height: 220px;
 
-            height: 250px;
+            border-radius: 18px;
 
             overflow: hidden;
 
-            border-radius: 20px;
-
             position: relative;
 
-            background:
-                rgba(2,44,34,0.7);
+            background: rgba(255,255,255,0.08);
 
-            border:
-                1px solid
-                rgba(134,239,172,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-
         .gallery-item img {
-
             width: 100%;
-
             height: 100%;
 
             object-fit: cover;
 
-            transition:
-                0.5s;
+            transition: 0.5s;
         }
-
 
         .gallery-item:hover img {
-
-            transform:
-                scale(1.1);
+            transform: scale(1.1);
         }
 
-
         .gallery-caption {
-
             position: absolute;
 
             bottom: 0;
-
             left: 0;
+            right: 0;
 
-            width: 100%;
+            padding: 15px;
 
-            padding: 20px;
-
-            background:
-                linear-gradient(
-                    transparent,
-                    rgba(0,0,0,0.9)
-                );
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.8)
+            );
 
             font-weight: bold;
         }
 
-
         /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         footer {
-
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 30px;
 
-            background:
-                rgba(2,20,15,0.8);
+            background: rgba(15,23,42,0.8);
 
-            border-top:
-                1px solid
-                rgba(134,239,172,0.2);
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+            color: #94a3b8;
         }
 
-
-        footer h3 {
-
-            color: #86efac;
-
-            margin-bottom: 10px;
+        footer strong {
+            color: #a78bfa;
         }
-
-
-        footer p {
-
-            color: #bbf7d0;
-
-            font-size: 14px;
-
-            margin: 5px;
-        }
-
 
         /* =========================
            RESPONSIVE
-        ========================== */
+        ========================= */
 
-        @media (max-width: 700px) {
+        @media(max-width: 768px) {
 
             nav {
-
-                flex-direction: column;
-
-                gap: 15px;
+                padding: 15px 5%;
             }
-
 
             nav ul {
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-                gap: 15px;
+                gap: 10px;
             }
 
+            nav ul li a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
 
             .hero h2 {
-
-                font-size: 24px;
+                font-size: 23px;
             }
-
 
             section {
-
-                padding:
-                    70px 5%;
+                padding: 70px 5%;
             }
 
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
 
-            .leader {
+        @media(max-width: 500px) {
 
-                display: block;
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
 
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
         }
 
     </style>
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      NAVBAR
@@ -652,117 +497,99 @@
 <nav>
 
     <div class="logo">
-        XI TKJ 1
+        XI <span>TKJ 1</span>
     </div>
 
-
     <ul>
-
-        <li>
-            <a href="#home">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a href="#organisasi">
-                Organisasi
-            </a>
-        </li>
-
-        <li>
-            <a href="#piket">
-                Jadwal Piket
-            </a>
-        </li>
-
-        <li>
-            <a href="#kegiatan">
-                Kegiatan
-            </a>
-        </li>
-
+        <li><a href="#home">Home</a></li>
+        <li><a href="#wali">Wali Kelas</a></li>
+        <li><a href="#organisasi">Organisasi</a></li>
+        <li><a href="#piket">Piket</a></li>
+        <li><a href="#galeri">Galeri</a></li>
     </ul>
 
 </nav>
-
 
 
 <!-- =====================================================
      HOME
 ===================================================== -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
     <div class="hero-content">
 
+        <h1>XI TKJ 1</h1>
 
-        <div class="badge">
-
-            WEBSITE RESMI KELAS
-
-        </div>
-
-
-        <h1>
-            XI TKJ 1
-        </h1>
-
-
-        <h2>
-            Struktur Organisasi Kelas
-        </h2>
-
+        <h2>Struktur Organisasi Kelas</h2>
 
         <p>
-
-            Selamat datang di website
-            kelas XI TKJ 1.
-
-            <br>
-
-            Di sini kamu dapat melihat
-            struktur organisasi,
-            profil pengurus kelas,
-            jadwal piket, dan
-            dokumentasi kegiatan kelas.
-
+            Selamat datang di website resmi kelas XI TKJ 1.
+            Website ini berisi struktur organisasi kelas,
+            jadwal piket, serta dokumentasi kegiatan kelas.
         </p>
 
-
-        <a
-            href="#organisasi"
-            class="btn"
-        >
-
-            Lihat Organisasi
-
+        <a href="#organisasi" class="btn">
+            Lihat Struktur Kelas
         </a>
-
 
     </div>
 
 </section>
 
 
+<!-- =====================================================
+     WALI KELAS
+===================================================== -->
+
+<section id="wali">
+
+    <div class="section-title">
+
+        <h2>👨‍🏫 Wali Kelas</h2>
+
+        <p>
+            Pembimbing dan pengarah kelas XI TKJ 1
+        </p>
+
+    </div>
+
+
+    <div class="wali-container">
+
+        <div class="card profile-card">
+
+            <!-- GANTI # DENGAN FOTO WALI KELAS -->
+            <img
+                src="wali-kelas.png"
+                alt="Foto Wali Kelas"
+                class="profile-img"
+            >
+
+            <h3> Pak Yaniko</h3>
+
+            <div class="jabatan">
+                Wali Kelas XI TKJ 1
+            </div>
+
+            <p>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- =====================================================
      STRUKTUR ORGANISASI
 ===================================================== -->
 
-<section
-    id="organisasi"
->
-
+<section id="organisasi">
 
     <div class="section-title">
 
-        <h2>
-            Struktur Organisasi
-        </h2>
+        <h2>👥 Struktur Organisasi</h2>
 
         <p>
             Pengurus kelas XI TKJ 1
@@ -771,616 +598,284 @@
     </div>
 
 
-
     <div class="organization">
 
 
-        <!-- =====================
-             WALI KELAS
-        ====================== -->
-
-        <div class="leader">
-
-            <div class="card">
-
-
-                <!--
-                    GANTI # DENGAN
-                    NAMA FILE FOTO WALI KELAS
-                -->
-
-                <img
-                    src="#"
-                    alt="Foto Wali Kelas"
-                >
-
-
-                <h3>
-
-                    # ISI NAMA WALI KELAS
-
-                </h3>
-
-
-                <div class="position">
-
-                    WALI KELAS
-
-                </div>
-
-
-                <p class="profile">
-
-                    # ISI PROFIL WALI KELAS DI SINI
-
-                    <br><br>
-
-                    # Tulis informasi
-                    mengenai wali kelas.
-
-                </p>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =====================
-             KETUA
-        ====================== -->
+        <!-- KETUA -->
 
         <div class="card">
 
+            <!-- GANTI # DENGAN FOTO KETUA -->
+            <img src="ketua.jpg" alt="Foto Ketua">
 
-            <img
-                src="#"
-                alt="Foto Ketua Kelas"
-            >
-
-
-            <h3>
-
-                # ISI NAMA KETUA
-
-            </h3>
-
+            <h3> Jhon</h3>
 
             <div class="position">
-
                 KETUA KELAS
-
             </div>
 
-
-            <p class="profile">
-
-                # ISI PROFIL KETUA DI SINI
-
-                <br><br>
-
-                # Tulis informasi
-                mengenai ketua kelas.
-
-            </p>
-
+            <p>
 
         </div>
 
 
-
-        <!-- =====================
-             WAKIL
-        ====================== -->
+        <!-- WAKIL -->
 
         <div class="card">
 
+            <!-- GANTI # DENGAN FOTO WAKIL -->
+            <img src="wakil.jpg" alt="Foto Wakil">
 
-            <img
-                src="#"
-                alt="Foto Wakil Ketua"
-            >
-
-
-            <h3>
-
-                # ISI NAMA WAKIL
-
-            </h3>
-
+            <h3> Calya</h3>
 
             <div class="position">
-
                 WAKIL KETUA
-
             </div>
 
-
-            <p class="profile">
-
-                # ISI PROFIL WAKIL DI SINI
-
-                <br><br>
-
-                # Tulis informasi
-                mengenai wakil ketua.
-
-            </p>
-
+            <p>
 
         </div>
 
 
-
-        <!-- =====================
-             SEKRETARIS
-        ====================== -->
+        <!-- SEKRETARIS -->
 
         <div class="card">
 
+            <!-- GANTI # DENGAN FOTO SEKRETARIS -->
+            <img src="sekretaris.jpg" alt="Foto Sekretaris">
 
-            <img
-                src="#"
-                alt="Foto Sekretaris"
-            >
-
-
-            <h3>
-
-                # ISI NAMA SEKRETARIS
-
-            </h3>
-
+            <h3> Amelia Fransiska</h3>
 
             <div class="position">
-
                 SEKRETARIS
-
             </div>
 
-
-            <p class="profile">
-
-                # ISI PROFIL SEKRETARIS DI SINI
-
-                <br><br>
-
-                # Tulis informasi
-                mengenai sekretaris.
-
-            </p>
-
+            <p>
 
         </div>
 
 
-
-        <!-- =====================
-             BENDAHARA
-        ====================== -->
+        <!-- BENDAHARA -->
 
         <div class="card">
 
+            <!-- GANTI # DENGAN FOTO BENDAHARA -->
+            <img src="bendahara.jpg" alt="Foto Bendahara">
 
-            <img
-                src="#"
-                alt="Foto Bendahara"
-            >
-
-
-            <h3>
-
-                # ISI NAMA BENDAHARA
-
-            </h3>
-
+            <h3> Farlitha As Sabrin</h3>
 
             <div class="position">
-
                 BENDAHARA
-
             </div>
 
-
-            <p class="profile">
-
-                # ISI PROFIL BENDAHARA DI SINI
-
-                <br><br>
-
-                # Tulis informasi
-                mengenai bendahara.
-
-            </p>
-
+            <p>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<<!-- =====================================================
      JADWAL PIKET
 ===================================================== -->
 
-<section
-    id="piket"
->
-
+<section id="piket">
 
     <div class="section-title">
 
-        <h2>
-            Jadwal Piket
-        </h2>
+        <h2>📅 Jadwal Piket</h2>
 
         <p>
-            Jadwal kebersihan kelas
-            XI TKJ 1
+            Jadwal piket siswa kelas XI TKJ 1
         </p>
 
     </div>
-
 
 
     <div class="schedule">
 
 
-        <table>
+        <!-- SENIN -->
 
+        <div class="day-card">
 
-            <thead>
+            <h3>Senin</h3>
 
-                <tr>
+            <ul>
+                <li>Muhammad Ridhlo Maulana Akbar</li>
+                <li>M. Devan Abdika Bangsa</li>
+                <li>Fabrianz Torino Putranzah</li>
+                <li>Ahmad Zidan Alfadly</li>
+                <li>Acha Bryan Firdaus</li>
+                <li>Ahmad Khubaisy Muhsinin</li>
+                <li>Juan Dzakwan Hisyam</li>
+            </ul>
 
-                    <th>
-                        HARI
-                    </th>
+        </div>
 
-                    <th>
-                        ANGGOTA PIKET
-                    </th>
 
-                </tr>
+        <!-- SELASA -->
 
-            </thead>
+        <div class="day-card">
 
+            <h3>Selasa</h3>
 
-            <tbody>
+            <ul>
+                <li>Silva Talitha Dzakira</li>
+                <li>Fizza Fahrian Dwidama</li>
+                <li>Muhammad Farid Byantara Kusuma</li>
+                <li>Khalil Azzam Mudji Maulinda</li>
+                <li>Nico Putra Pramana</li>
+                <li>Muhammad Akbar Brilian</li>
+                <li>Ahmad Sony Fahreza</li>
+            </ul>
 
+        </div>
 
-                <!-- SENIN -->
 
-                <tr>
+        <!-- RABU -->
 
-                    <td>
-                        <strong>
-                            SENIN
-                        </strong>
-                    </td>
+        <div class="day-card">
 
-                    <td>
+            <h3>Rabu</h3>
 
-                        1.Muhammad Ridhlo Maulana Akbar
-                        2.M.Devan Abdika Bangsa
-                        3.Fabrianz Torino Putranzah
-                        4.Ahmad Zidan Alfadly
-                        5.Acha Bryan Firdaus
-                        6.Ahmad Khubaisy Muhsinin
-                        7.Juan Dzakwan Hisyam
+            <ul>
+                <li>Naura Yuwan Ramandhita</li>
+                <li>Nadine Anindya Alfian Putri</li>
+                <li>Amelia Fransiska Dyah C</li>
+                <li>Reyghen Ethan Bradly Simanjuntak</li>
+                <li>Theodorius Adi Fatlolon</li>
+                <li>Calya Aqila Mouzavie</li>
+                <li>Muhammad Yafiq Nadim Rafif</li>
+            </ul>
 
-                        <br>
+        </div>
 
-                    </td>
 
-                </tr>
+        <!-- KAMIS -->
 
+        <div class="day-card">
 
-                <!-- SELASA -->
+            <h3>Kamis</h3>
 
-                <tr>
+            <ul>
+                <li>Ayyub</li>
+                <li>Ajeng Ayu Siswati</li>
+                <li>Dhaniel Wahyu Bahtiar</li>
+                <li>Ken Kanzan Makhfiyan</li>
+                <li>Baskoro Gadang Widhyodono</li>
+                <li>Raditya Satrio Abimanyu</li>
+                <li>Farlitha As.Sabrin</li>
+            </ul>
 
-                    <td>
-                        <strong>
-                            SELASA
-                        </strong>
-                    </td>
+        </div>
 
-                    <td>
 
-                        1.Silva Talitha Dzakira
-                        <br>
+        <!-- JUMAT -->
 
-                        2.Fizza Fahrian Dwidama
-                        <br>
+        <div class="day-card">
 
-                        3.Muhammad Farid Byantara Kusuma
-                        <br>
+            <h3>Jumat</h3>
 
-                        4.Khalil Azzam Mudji Maulinda
-                        <br>
+            <ul>
+                <li>Zidni Nuro M</li>
+                <li>Dwi Affandy</li>
+                <li>Lintang Albrian Anwar</li>
+                <li>Zanuar Eka Prasetya</li>
+                <li>Queensha Aurellia</li>
+                <li>Jhon Terry Eka Ramadhani</li>
+            </ul>
 
-                        5.Nico Putra Pramana
-                        <br>
-
-                        6.Muhammad Akbar Brilian
-                        <br>
-
-                        7.Ahmad Sony Fahreza
-
-
-                    </td>
-
-                </tr>
-
-
-                <!-- RABU -->
-
-                <tr>
-
-                    <td>
-                        <strong>
-                            RABU
-                        </strong>
-                    </td>
-
-                    <td>
-
-                        1.Naura Yuwan Ramandhita
-                        <br>
-
-                        2.Nadine Anindya Alfian Putri
-                        <br>
-
-                        3.Amelia Fransiska Dyah C
-                        <br>
-
-                        4.Reyghen Ethan Bradly Simanjuntak
-                        <br>
-
-                        5.Theodorius Adi Fatlolon
-                        <br>
-
-                        6.Calya Aqila Mouzavie
-                        <br>
-
-                        7.Muhammad Yafiq Nadim Rafif
-
-                    </td>
-
-                </tr>
-
-
-                <!-- KAMIS -->
-
-                <tr>
-
-                    <td>
-                        <strong>
-                            KAMIS
-                        </strong>
-                    </td>
-
-                    <td>
-
-                        1.Ayyub
-                        <br>
-
-                        2.Ajeng Ayu Siswati
-                        <br>
-
-                        3.Dhaniel Wahyu Bahtiar
-                        <br>
-
-                        4.Ken Kanzan Makhfiyan
-                        <br>
-
-                        5.Baskoro Gadang Widhyodono
-                        <br>
-
-                        6.Raditya Satrio Abimanyu
-                        <br>
-
-                        7.Farlitha As.Sabrin
-
-                    </td>
-
-                </tr>
-
-
-                <!-- JUMAT -->
-
-                <tr>
-
-                    <td>
-                        <strong>
-                            JUMAT
-                        </strong>
-                    </td>
-
-                    <td>
-
-                        1.Zidni Nuro M
-                        <br>
-
-                        2.Dwi Affandy
-                        <br>
-
-                        3.Lintang Albrian Anwar
-                        <br>
-
-                        4.Zanuar Eka Prasetya
-                        <br>
-
-                        5.Queensha Aurellia
-                        <br>
-
-                        6.Jhon Terry Eka Ramadhani
-
-                    </td>
-
-                </tr>
-
-
-            </tbody>
-
-        </table>
+        </div>
 
     </div>
 
 </section>
 
-
-
 <!-- =====================================================
-     FOTO KEGIATAN
+     GALERI KEGIATAN
 ===================================================== -->
 
-<section
-    id="kegiatan"
->
-
+<section id="galeri">
 
     <div class="section-title">
 
-        <h2>
-            Foto Kegiatan
-        </h2>
+        <h2>📸 Kegiatan Kelas</h2>
 
         <p>
-            Dokumentasi kegiatan
-            kelas XI TKJ 1
+            Dokumentasi kegiatan kelas XI TKJ 1
         </p>
 
     </div>
 
 
-
     <div class="gallery">
 
 
-        <!-- FOTO KEGIATAN 1 -->
+        <!-- FOTO 1 -->
 
         <div class="gallery-item">
 
+            <!-- GANTI # DENGAN FOTO KEGIATAN -->
             <img
-                src="#"
-                alt="Foto Kegiatan 1"
+                src="kegiatan1.jpeg"
+                alt="Piket senin"
             >
 
             <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 1
-
             </div>
 
         </div>
 
 
-
-        <!-- FOTO KEGIATAN 2 -->
+        <!-- FOTO 2 -->
 
         <div class="gallery-item">
 
             <img
-                src="#"
-                alt="Foto Kegiatan 2"
+                src="kegiatan2.jpeg"
+                alt="Piket Selasa"
             >
 
             <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 2
-
             </div>
 
         </div>
 
 
-
-        <!-- FOTO KEGIATAN 3 -->
+        <!-- FOTO 3 -->
 
         <div class="gallery-item">
 
             <img
-                src="#"
-                alt="Foto Kegiatan 3"
+                src="kegiatan3.jpeg"
+                alt="piket Rabu"
             >
 
             <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 3
-
             </div>
 
         </div>
 
 
-
-        <!-- FOTO KEGIATAN 4 -->
-
-        <div class="gallery-item">
-
-            <img
-                src="#"
-                alt="Foto Kegiatan 4"
-            >
-
-            <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 4
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOTO KEGIATAN 5 -->
+        <!-- FOTO 4 -->
 
         <div class="gallery-item">
 
             <img
-                src="#"
-                alt="Foto Kegiatan 5"
+                src="kegiatan4.jpeg"
+                alt="Piket Kamis"
             >
 
             <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 5
-
             </div>
-
         </div>
-
-
-
-        <!-- FOTO KEGIATAN 6 -->
-
-        <div class="gallery-item">
-
-            <img
-                src="#"
-                alt="Foto Kegiatan 6"
-            >
-
-            <div class="gallery-caption">
-
-                # JUDUL KEGIATAN 6
-
-            </div>
-
-        </div>
-
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1389,21 +884,15 @@
 
 <footer>
 
-    <h3>
-        XI TKJ 1
-    </h3>
+    <p>
+        © 2026 <strong>XI TKJ 1</strong>
+    </p>
 
     <p>
         Struktur Organisasi Kelas
     </p>
 
-    <p>
-        © 2026 XI TKJ 1
-    </p>
-
 </footer>
-
 
 </body>
 </html>
-```
